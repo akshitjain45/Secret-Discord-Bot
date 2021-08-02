@@ -57,36 +57,10 @@ async def on_member_remove(member):
 
 
 
-# @client.event
-# async def on_message(message):
-#     # if message.author.bot or str(message.channel) != channel_name:
-#     #     return
-
-#     if message.content is None:
-#         print("Empty message received.")
-#         return
-
-#     print("Message: " + str(message.content))
-
-#     if message.content.startswith('*'):
-#         return
-#     elif 'shutdown' in message.content and message.author.id == 173450781784145921:
-#         await client.logout()
-#     elif message.content.startswith('ask'):
-#         aiml_response = aiml_kernel.respond(message.content[4:])
-#         if aiml_response == '':
-#             await message.channel.send("I don't have a response for that, sorry.")
-#         else:
-#             print(aiml_response)
-#             await message.channel.send(aiml_response)
-
-
-
-
 @client.command()
 async def ask(ctx, *, question):
     '''
-    - opens AI chatbot
+    - Opens AI chatbot
     '''
 
     if question is None:
@@ -169,13 +143,6 @@ async def clear(ctx, amount: int):
 async def clear_error(ctx, error):
     if isinstance(error, commands.MissingRequiredArgument):
         await ctx.send('Please specify an amount of messages to delete.')
-
-'''
-def is_it_me(ctx):
-    return ctx.author.id == 604239299470426142 or 697136336582344786 or 451742374545195018
-    # TEWARI - 604239299470426142
-    # AKSHIT - 451742374545195018
-'''
 
 
 @client.command()
@@ -696,5 +663,5 @@ async def request_points(ctx):
 async def change_status():
     await client.change_presence(activity=discord.Game(next(status)))
 
-client.run("")
+client.run("Enter Your Token Here")
 
